@@ -1,0 +1,31 @@
+.pre-sets-styling {
+  position: relative;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 8px;
+}
+
+.pre-sets-styling:hover .dropdown-content {
+  display: block;
+}
