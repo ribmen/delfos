@@ -14,5 +14,6 @@ const FooterStyle = styled.footer`
 export const Footer = () => {
   return(
     <FooterStyle/>
+    
   )
 }
