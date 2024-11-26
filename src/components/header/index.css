@@ -1,0 +1,24 @@
+.avatarProfile {
+  border-radius: 50px;
+  height: 50px;
+  width: auto;
+  margin: auto 0 auto 15px;
+}
+
+.govLogo {
+  height: 36px;
+  width: 94px;
+  margin: auto 0 auto 100px;
+  display: block;
+}
+
+.buttonLogin {
+  margin: 0 auto 0 auto;
+}
+
+.title {
+  font-family: "Segoe UI";
+  font-size: 40px;
+  color: white;
+  margin: 0 20px 0 185px;
+}
