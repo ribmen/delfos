@@ -1,8 +1,5 @@
 import styled from "styled-components"
 
-export const LinkFormStyled = styled.form`
-  
-`
 export const InputStyled = styled.input`
   box-sizing: border-box;
   width: 100%;

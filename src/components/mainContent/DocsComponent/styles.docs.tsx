@@ -5,30 +5,66 @@ export const DocsComponentStyled = styled.aside`
   flex: 1;
   box-sizing: border-box;
   margin: 0 2rem 0 6rem;
+  padding: 2rem;
   border-radius: 30px 0 0 30px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 `;
 
 export const GridComponentStyled = styled.nav`
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
   width: 80%;
+  margin: auto;
 `;
 
-export const NamespaceStyled = styled.div`
+export const NamespaceStyled = styled.div<{ $isSelected: boolean }>`
   margin: 1px;
-  padding: 15px 0 15px 0;
+  padding: 15px 0;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+  border: 2px solid transparent; // já cria a borda, sendo invisível!!!
+  box-sizing: border-box;
+  cursor: pointer;
+
+  // Estilos dinâmicos baseados no estado "isSelected"
+  border-color: ${(props) => (props.$isSelected ? "#4caf50" : "transparent")};
+  background-color: ${(props) => (props.$isSelected ? "rgba(76, 175, 80, 0.1)" : "transparent")};
+
   &:hover{
-    border: 2px solid #4caf50;
+    border-color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
   }
 `;
 
+export const SelectedNamespaceStyled = (props: any) => <NamespaceStyled {...props} children={
+  styled.div`
+    border-color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
+  `
+}/>
+
 export const DragNDropStyled = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 80%;
-  height: 200px;
+  height: auto;
   background-color: #dcdcdc;
+  border: 2px dashed #bbb;
   border-radius: 5px;
+  padding: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #4caf50;
+  }
 `;
 
 export const DivStyled = styled.div`

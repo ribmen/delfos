@@ -1,20 +1,21 @@
 import { Fragment } from "react";
-import { InputStyled, LinkFormStyled } from "./styles.form";
-import { useInputValue } from "../../InputValueContext";
+import { InputStyled} from "../styles.form";
+import { useInputValue } from "../../../InputValueContext";
+import { useNamespaceValue } from "../../../NamespaceContext";
+import "./index.css"
 
-export const FormsComponent: React.FC = () => {
-
+export const LinkFormComponent: React.FC = () => {
   //shared states; context API: forma correta de compartilhar entre componentes mas não componentes hierárquicos
   const { inputValue, setInputValue } = useInputValue();
+  const { namespaceValue } = useNamespaceValue();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value); // atualiza o valor local
-    console.log("Texto modificado no input form: ", inputValue)
   };
 
   return(
     <Fragment>
-      <LinkFormStyled>
+      <h4 className="mediaTitle">{namespaceValue}</h4>
         <InputStyled 
           type="text" 
           value={inputValue}
@@ -22,7 +23,6 @@ export const FormsComponent: React.FC = () => {
           autoComplete="off"
           onChange={handleInputChange} 
         />
-      </LinkFormStyled>
     </Fragment>
   )
 }

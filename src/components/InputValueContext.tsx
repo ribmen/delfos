@@ -27,7 +27,7 @@ export const InputValueProvider: React.FC<InputValueProviderProps> = ({ children
 export const useInputValue = (): InputValueContextType => {
   const context = useContext(InputValueContext);
   if (!context) {
-    throw new Error("useInputContext must be used within a TextProvider")
+    throw new Error("useInputValue must be used within a TextProvider")
   }
   return context;
 };
