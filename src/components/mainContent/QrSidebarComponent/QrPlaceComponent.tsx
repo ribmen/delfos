@@ -12,6 +12,7 @@ export const QrPlaceComponent = () => {
     setQrValue(vCardValue || 'Valor padrão do QR CODE');
     console.log("formulário recebido", vCardValue);
   }, [vCardValue]);
+  console.log("valor corrigido", vCardValue);
 
   return (
     <QrPlaceComponentStyle>

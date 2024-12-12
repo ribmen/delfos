@@ -12,9 +12,7 @@ export const DocsComponent = () => {
       <MediasComponent/>
       <h1 style={{margin: '24px 0px 0px 0px'}}>Submeta a URL</h1>
         <DragNDropStyled>
-          <VCardValueProvider>
             <FormsComponent/>
-          </VCardValueProvider>
         </DragNDropStyled>
 
         <DropdownContainer className="pre-sets-styling">

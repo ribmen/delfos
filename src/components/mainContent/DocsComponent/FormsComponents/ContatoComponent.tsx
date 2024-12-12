@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
 import { TextField, Button, Box } from '@mui/material';
 import { useVCardValue } from "../../../contexts/vCardContext";
@@ -30,19 +30,21 @@ export const ContatoComponent: React.FC = () => {
     address: '',
   });
 
-   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value} = event.target;
-    setVCard((prev: any) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+   const { name, value} = event.target;
+   setVCard((prev: any) => ({
+     ...prev,
+     [name]: value,
+   }));
+ };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const formattedVCard = generateVCard(vCard);
     setVCardValue(formattedVCard); // salva no contexto
     console.log("formulário enviado", vCardValue);
+    
   };
 
   return(

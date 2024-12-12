@@ -18,32 +18,19 @@ export const generateVCard = (
   {
     lastName,
     firstName, 
-    phoneNumber = '', 
-    landlineNumber = '', 
-    email = '', 
-    address = '', 
+    phoneNumber, 
+    landlineNumber, 
+    email, 
+    address, 
     city, 
     state, 
     CEPcode, 
     country, 
-    organization = '', 
-    role = '', 
+    organization, 
+    role, 
     websiteUrl
   }: VCardProps) => {
-    return `
-    BEGIN:VCARD
-    VERSION:3.0
-    N:${lastName};${firstName};;;
-    FN:${firstName} ${lastName}
-    TEL;TYPE=CELL:${phoneNumber}
-    TEL;TYPE=LANDLINE:${landlineNumber}
-    EMAIL:${email}
-    ADR;TYPE=HOME:;;${address};${city};${state};${CEPcode};${country}
-    ORG:${organization}
-    ROLE:${role}
-    URL:${websiteUrl}
-    END:VCARD
-    `
+    return `BEGIN:VCARD\nVERSION:3.0\nN:${lastName};${firstName};;;\nTEL;CELL:${phoneNumber}\nTEL;TYPE=LANDLINE:${landlineNumber}\nEMAIL:${email}\nADR:;;${address};${city};${state};${CEPcode};${country}\nORG:${organization}\nROLE:${role}\nTITLE:${role}\nURL:${websiteUrl}\nEND:VCARD`
   };
   
   

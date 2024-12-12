@@ -20,7 +20,6 @@ interface vCardProviderProps {
 export const VCardValueProvider: React.FC<vCardProviderProps> = ({children}) => {
   const [vCardValue, setVCardValue] = useState<string>('');
   return (
-    
     <VCardContext.Provider value={{vCardValue, setVCardValue}}>
       {children} 
     </VCardContext.Provider>
