@@ -1,4 +1,4 @@
-import { Header} from "./styles.bavbar"
+import { Header} from "./styles.navbar.tsx"
 import "../header/index.css";
 import { ButtonComponent } from "../button1Component/ButtonComponent";
 

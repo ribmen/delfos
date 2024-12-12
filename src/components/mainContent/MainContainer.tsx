@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { QrContainer } from "./QrSidebarComponent/QrContainer";
 import { DocsComponent } from "./DocsComponent/DocsComponent";
 import React from "react";
-import { LinkValueProvider } from "../LinkValueContext";
-import { InputValueProvider } from "../InputValueContext";
-import { NamespaceContextProvider } from "../NamespaceContext";
+import { LinkValueProvider } from "../contexts/LinkValueContext";
+import { InputValueProvider } from "../contexts/InputValueContext";
+import { NamespaceContextProvider } from "../contexts/NamespaceContext";
+import { ButtonFormProvider } from "../contexts/ButtonFormContext";
+import { VCardValueProvider } from "../contexts/vCardContext";
 
 const MainContainerStyle = styled.main`
   width: 70vw;
@@ -16,19 +18,24 @@ const MainContainerStyle = styled.main`
   justify-content: flex-end;
   gap: 10px;
   align-items: center;
+  box-sizing: border-box;
 `
 
 export const MainContainer: React.FC = () => {
   return(
+    <VCardValueProvider>
     <InputValueProvider>
-      <LinkValueProvider>
+    <LinkValueProvider>
+    <ButtonFormProvider>
         <MainContainerStyle>
           <NamespaceContextProvider>
             <DocsComponent/>
+            <QrContainer/>
           </NamespaceContextProvider>
-          <QrContainer/>
         </MainContainerStyle>    
-      </LinkValueProvider>  
+    </ButtonFormProvider>
+    </LinkValueProvider>  
     </InputValueProvider>
+    </VCardValueProvider>
   )
 }

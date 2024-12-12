@@ -1,9 +1,9 @@
 .backPanel {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background-color: #E3E3E3;
   width: 400px;
-  height: 100%;
   padding: 50px 55px 100px 55px;
   box-sizing: border-box;
   align-items: center;

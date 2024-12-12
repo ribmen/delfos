@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const DocsComponentStyled = styled.aside`
-  height: 90%;
+  min-height: 70vh;
   flex: 1;
   box-sizing: border-box;
-  margin: 0 2rem 0 6rem;
-  padding: 2rem;
+  margin: 2rem 2rem 2rem 6rem;
+  padding: 0 2rem 0 2rem;
   border-radius: 30px 0 0 30px;
   background-color: #f9f9f9;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);

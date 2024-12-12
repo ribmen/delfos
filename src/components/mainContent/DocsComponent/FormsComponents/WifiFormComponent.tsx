@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { InputStyled } from "../styles.form";
-import { useInputValue } from "../../../InputValueContext";
-import { useNamespaceValue } from "../../../NamespaceContext";
+import { useInputValue } from "../../../contexts/InputValueContext";
+import { useNamespaceValue } from "../../../contexts/NamespaceContext";
 import "./index.css";
 
 export const WifiFormComponent: React.FC = () => {

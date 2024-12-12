@@ -1,7 +1,7 @@
 import "./index.css"
 import { ButtonStyled } from "./styles.button";
-import { useLinkValue } from "../LinkValueContext";
-import { useInputValue } from "../InputValueContext";
+import { useLinkValue } from "../contexts/LinkValueContext";
+import { useInputValue } from "../contexts/InputValueContext";
 
 // botão que Submit isola a lógica de recepção dos dados do link
 
@@ -18,8 +18,8 @@ export const SubmitButtonComponent = ({label, disabled}: ButtonProps) => {
   const { inputValue } = useInputValue(); // pegando o texto do contexto e a função para atualizar a flag
 
   const handleClick = () => {
-    console.log("Texto enviado: ", inputValue);
     setLinkValue(inputValue);
+    console.log("Texto enviado: ", inputValue);
   } 
   return(
     <ButtonStyled onClick={handleClick} disabled={disabled} >{label}</ButtonStyled>

@@ -1,7 +1,13 @@
-import { useNamespaceValue } from "../../../NamespaceContext";
+import { useNamespaceValue } from "../../../contexts/NamespaceContext";
+import { ContatoComponent } from "./ContatoComponent";
 import { DocumentoHospedadoComponent } from "./DocumentoHospedadoComponent";
+import { EmailComponent } from "./EmailComponent";
 import { LinkFormComponent } from "./LinkFormComponent";
+import { TextoComponent } from "./TextoComponent";
+import { WhatsappContactComponent } from "./WhatsappContactComponent";
 import { WifiFormComponent } from "./WifiFormComponent";
+
+
 
 export const FormsComponent: React.FC = () => {
   //shared states; context API: forma correta de compartilhar entre componentes mas não componentes hierárquicos
@@ -15,19 +21,17 @@ export const FormsComponent: React.FC = () => {
     case "Documento hospedado":
       return <DocumentoHospedadoComponent/>
     case "Contato":
-      return 
+      return <ContatoComponent/>
     case "Texto":
-      return 
+      return <TextoComponent/>
     case "E-mail":
-      return 
+      return <EmailComponent/>
     case "Imagem":
-      return 
-    case "Evento":
-      return 
+      return "To be implemented"
     case "Whatsapp":
-      return 
+      return <WhatsappContactComponent/>
     default:
-      return "Implemente mais."
+      return "Selecione um formato de mídia para proseguir."
   }
 
 }

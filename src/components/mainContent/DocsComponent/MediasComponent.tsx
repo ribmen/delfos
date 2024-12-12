@@ -1,4 +1,4 @@
-import { useNamespaceValue } from "../../NamespaceContext";
+import { useNamespaceValue } from "../../contexts/NamespaceContext";
 import { GridComponentStyled, NamespaceStyled } from "./styles.docs";
 import { useState } from "react";
 
@@ -6,7 +6,6 @@ export const MediasComponent = () => {
   const [ selectedNamespace, setSelectedNamespace ] = useState<string | null>(null);
   const { setNamespaceValue } = useNamespaceValue();
 
-  //entender isso
   const handleSelectedNamespace = (namespace: string) => {
     setSelectedNamespace(namespace);
     setNamespaceValue(namespace);
@@ -22,7 +21,7 @@ export const MediasComponent = () => {
             }>
             
             <GridComponentStyled>
-              {["Link", "Wifi", "Documento hospedado", "Contato", "Texto", "E-mail", "Imagem", "Evento", "Whatsapp"].map((namespace) => (
+              {["Link", "Wifi", "Documento hospedado", "Contato", "Texto", "E-mail", "Imagem", "Whatsapp"].map((namespace) => (
                 <NamespaceStyled
                   key={namespace}
                   onClick={() => handleSelectedNamespace(namespace)}

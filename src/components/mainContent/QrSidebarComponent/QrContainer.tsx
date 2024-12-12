@@ -12,7 +12,7 @@ export const QrContainer = () => {
       <div className="alignment">
         <h1>SEU QR CODE</h1>
           <div className="QrContainer">
-              <QrPlaceComponent/>
+              {<QrPlaceComponent/>}
           </div>
       </div>
 

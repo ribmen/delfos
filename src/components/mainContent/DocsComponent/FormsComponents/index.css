@@ -4,5 +4,8 @@
 
 .wifiInputs {
   display: flex;
-  
+}
+
+.contactInputs {
+  display: flex;
 }
