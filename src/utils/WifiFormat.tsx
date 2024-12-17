@@ -2,18 +2,18 @@ interface WifiProps {
   aut: string;
   ssid: string;
   password: string;
-  hidden: boolean;
+  hidden: string;
 }
 
 export const generateWifiConnection = (
   {
-    aut, 
-    ssid, 
+    aut, // wpa
+    ssid, // nome da rede
     password, 
     hidden
   }: WifiProps) => {
     
     return `
-      WIFI:T:<${aut}>;S:<${ssid}>;P:<${password}>;H:<${hidden}>;
+      WIFI:T:${aut};S:${ssid};P:${password};H:${hidden};
     `
   };

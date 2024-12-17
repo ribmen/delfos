@@ -7,6 +7,7 @@ import { InputValueProvider } from "../contexts/InputValueContext";
 import { NamespaceContextProvider } from "../contexts/NamespaceContext";
 import { ButtonFormProvider } from "../contexts/ButtonFormContext";
 import { VCardValueProvider } from "../contexts/vCardContext";
+import { WifiValueProvider } from "../contexts/WifiContext";
 
 const MainContainerStyle = styled.main`
   width: 70vw;
@@ -23,19 +24,22 @@ const MainContainerStyle = styled.main`
 
 export const MainContainer: React.FC = () => {
   return(
-    <VCardValueProvider>
     <InputValueProvider>
+    <VCardValueProvider>
     <LinkValueProvider>
     <ButtonFormProvider>
+    <WifiValueProvider>
         <MainContainerStyle>
           <NamespaceContextProvider>
             <DocsComponent/>
             <QrContainer/>
           </NamespaceContextProvider>
         </MainContainerStyle>    
+
+    </WifiValueProvider>
     </ButtonFormProvider>
     </LinkValueProvider>  
-    </InputValueProvider>
     </VCardValueProvider>
+    </InputValueProvider>
   )
 }

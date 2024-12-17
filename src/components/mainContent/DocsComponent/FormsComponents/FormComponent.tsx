@@ -17,20 +17,28 @@ export const FormsComponent: React.FC = () => {
     case "Link":
       return <LinkFormComponent/>
     case "Wifi":
+
       return <WifiFormComponent/>
     case "Documento hospedado":
+
       return <DocumentoHospedadoComponent/>
     case "Contato":
+
       return <ContatoComponent/>
     case "Texto":
+
       return <TextoComponent/>
     case "E-mail":
+
       return <EmailComponent/>
     case "Imagem":
+
       return "To be implemented"
     case "Whatsapp":
+
       return <WhatsappContactComponent/>
     default:
+
       return "Selecione um formato de mídia para proseguir."
   }
 

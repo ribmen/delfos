@@ -1,19 +1,14 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
 import { TextField, Button, Box } from '@mui/material';
 import { useVCardValue } from "../../../contexts/vCardContext";
 import { generateVCard } from "../../../../utils/vCardFormat";
 import "./index.css"
-import { useFormContext } from "../../../contexts/ButtonFormContext";
-import { useInputValue } from "../../../contexts/InputValueContext";
 
 
 export const ContatoComponent: React.FC = () => {
-/*   const { handleSubmit } = useFormContext(); */
   const { namespaceValue } = useNamespaceValue();
-  const { setVCardValue } = useVCardValue();
-  const {vCardValue } = useVCardValue();
-  const { setInputValue } = useInputValue();
+  const {setVCardValue, vCardValue } = useVCardValue();
   const [vCard, setVCard] = useState({
     firstName: '',
     lastName: '',
@@ -37,27 +32,21 @@ export const ContatoComponent: React.FC = () => {
      ...prev,
      [name]: value,
    }));
- };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const formattedVCard = generateVCard(vCard);
-    setVCardValue(formattedVCard); // salva no contexto
-    console.log("formulário enviado", vCardValue);
-    
-  };
+   const formattedVCard = generateVCard(vCard);
+   setVCardValue(formattedVCard); // salva no contexto
+   console.log("formulário enviado", vCardValue);
+ };
 
   return(
     <Fragment>
       <Box
         component="form"
-        onSubmit={handleSubmit}  
       >
       <h4 className="mediaTitle">{namespaceValue}</h4>
       <div className="contactInputs">
         <label style={{marginRight: "10px"}}>Primeiro nome
         <TextField
-          id="first-name"
           type="text" 
           placeholder="" 
           autoComplete="off"
@@ -69,7 +58,6 @@ export const ContatoComponent: React.FC = () => {
         
         <label style={{marginLeft: "10px"}}>Último nome
         <TextField 
-          id="last-name"
           type="text" 
           placeholder="" 
           autoComplete="off"
@@ -82,7 +70,6 @@ export const ContatoComponent: React.FC = () => {
       <div className="contactInputs">
         <label style={{marginRight: "10px"}}>Telefone celular
         <TextField 
-          id="phone-number"
           type="text" 
           placeholder="Formato: (XX) XXXXX-XXXX" 
           autoComplete="off"
@@ -94,7 +81,6 @@ export const ContatoComponent: React.FC = () => {
         
         <label style={{marginLeft: "10px"}}>Telefone fixo
         <TextField 
-          id="landline-number"
           type="text" 
           placeholder="" 
           autoComplete="off"
@@ -107,7 +93,6 @@ export const ContatoComponent: React.FC = () => {
       <div className="contactInputs">
         <label style={{marginRight: "10px"}}>E-mail
         <TextField 
-          id="email"
           type="text" 
           placeholder="Formato: exemplo@dominio.com" 
           autoComplete="off"
@@ -119,7 +104,6 @@ export const ContatoComponent: React.FC = () => {
         
         <label style={{marginLeft: "10px"}}>Site (URL)
         <TextField 
-          id="site-url"
           type="text" 
           placeholder="https://" 
           autoComplete="off"
@@ -132,7 +116,6 @@ export const ContatoComponent: React.FC = () => {
       <div className="contactInputs">
         <label style={{marginRight: "10px"}}>Empresa
           <TextField 
-            id="company"
             type="text" 
             placeholder="PROCURADORIA GERAL DO ESTADO DO RN" 
             autoComplete="off"
@@ -144,7 +127,6 @@ export const ContatoComponent: React.FC = () => {
 
           <label style={{marginLeft: "10px"}}>Cargo
           <TextField 
-            id="role"
             type="text" 
             placeholder="" 
             autoComplete="off"
@@ -156,7 +138,6 @@ export const ContatoComponent: React.FC = () => {
       </div>
       <label>Endereço
         <TextField 
-          id="adress"
           type="text" 
           placeholder="R. X, N°, Bairro - Cidade, Estado" 
           autoComplete="off"
@@ -168,7 +149,6 @@ export const ContatoComponent: React.FC = () => {
       <div className="contactInputs">
         <label>City
         <TextField 
-          id="city"
           type="text" 
           placeholder="" 
           autoComplete="off"
@@ -180,7 +160,6 @@ export const ContatoComponent: React.FC = () => {
         
         <label style={{marginLeft: "10px"}}>CEP
         <TextField 
-          id="cep-code"
           type="text" 
           placeholder="Apenas dígitos" 
           autoComplete="off"
@@ -192,7 +171,6 @@ export const ContatoComponent: React.FC = () => {
 
         <label style={{marginLeft: "10px"}}>País
         <TextField 
-          id="country"
           type="text" 
           placeholder="" 
           autoComplete="off"
@@ -202,10 +180,6 @@ export const ContatoComponent: React.FC = () => {
         />
         </label>
       </div>
-
-      <Button type="submit" variant="contained" color="primary">
-          Testar dados
-      </Button>
       </Box>
     </Fragment>
   )
