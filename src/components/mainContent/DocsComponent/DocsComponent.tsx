@@ -1,4 +1,3 @@
-import { VCardValueProvider } from "../../contexts/vCardContext";
 import { FormsComponent } from "./FormsComponents/FormComponent";
 import { MediasComponent } from "./MediasComponent";
 import { DocsComponentStyled, DragNDropStyled, DropdownContainer, DropdownButton} from "./styles.docs";

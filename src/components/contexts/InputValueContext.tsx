@@ -17,8 +17,10 @@ interface InputValueProviderProps {
 export const InputValueProvider: React.FC<InputValueProviderProps> = ({ children }) => {
   const [inputValue, setInputValue] = useState<string>('');
 
+ 
+
   return (
-    <InputValueContext.Provider value={{inputValue, setInputValue }}>
+    <InputValueContext.Provider value={{inputValue, setInputValue}}>
       {children}
     </InputValueContext.Provider>
   );

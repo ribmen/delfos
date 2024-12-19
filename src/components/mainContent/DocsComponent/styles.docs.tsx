@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const DocsComponentStyled = styled.aside`
-  min-height: 70vh;
+  height: 70vh;
+  overflow: auto;
   flex: 1;
   box-sizing: border-box;
   margin: 2rem 2rem 2rem 6rem;
@@ -16,7 +17,7 @@ export const DocsComponentStyled = styled.aside`
 
 export const GridComponentStyled = styled.nav`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   width: 80%;

@@ -21,11 +21,11 @@ export const MediasComponent = () => {
             }>
             
             <GridComponentStyled>
-              {["Link", "Wifi", "Documento hospedado", "Contato", "Texto", "E-mail", "Imagem", "Whatsapp"].map((namespace) => (
+              {["Link", "WIFI", "Cartão de Contato", "E-mail", "Abrir chamado Suporte GLPI", "Whatsapp"].map((namespace) => (
                 <NamespaceStyled
                   key={namespace}
                   onClick={() => handleSelectedNamespace(namespace)}
-                  $isSelected = {selectedNamespace === namespace} // passando o estado da seleção como prop
+                  $isSelected = {selectedNamespace === namespace}
                 >
                   {namespace}
                 </NamespaceStyled>

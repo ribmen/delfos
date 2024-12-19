@@ -3,6 +3,7 @@ import React, { createContext, useState, ReactNode, useContext } from "react";
 interface LinkValueContextType {
   linkValue: string;
   setLinkValue: (linkValue: string) => void;
+  clearLinkContext: () => void;
 }
 
 //Criação do Contexto com os valores padrão
@@ -17,8 +18,10 @@ interface LinkValueProviderProps {
 export const LinkValueProvider: React.FC<LinkValueProviderProps> = ({ children }) => {
   const [linkValue, setLinkValue] = useState<string>('');
 
+  const clearLinkContext = () => setLinkValue('');
+
   return (
-    <LinkValueContext.Provider value={{linkValue, setLinkValue }}>
+    <LinkValueContext.Provider value={{linkValue, setLinkValue, clearLinkContext, }}>
       {children}
     </LinkValueContext.Provider>
   );

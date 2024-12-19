@@ -8,6 +8,8 @@ import { NamespaceContextProvider } from "../contexts/NamespaceContext";
 import { ButtonFormProvider } from "../contexts/ButtonFormContext";
 import { VCardValueProvider } from "../contexts/vCardContext";
 import { WifiValueProvider } from "../contexts/WifiContext";
+import { EmailComponent } from "./DocsComponent/FormsComponents/EmailComponent";
+import { MailtoValueProvider } from "../contexts/MailtoContext";
 
 const MainContainerStyle = styled.main`
   width: 70vw;
@@ -29,13 +31,14 @@ export const MainContainer: React.FC = () => {
     <LinkValueProvider>
     <ButtonFormProvider>
     <WifiValueProvider>
+    <MailtoValueProvider>
         <MainContainerStyle>
           <NamespaceContextProvider>
             <DocsComponent/>
             <QrContainer/>
           </NamespaceContextProvider>
         </MainContainerStyle>    
-
+    </MailtoValueProvider>
     </WifiValueProvider>
     </ButtonFormProvider>
     </LinkValueProvider>  
