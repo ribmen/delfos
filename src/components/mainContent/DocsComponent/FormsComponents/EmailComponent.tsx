@@ -7,7 +7,7 @@ import { generateMailtoMessage } from "../../../../utils/mailtoFormat";
 export const EmailComponent: React.FC = () => {
 
   const { namespaceValue } = useNamespaceValue();
-  const { mailtoValue, setMailtoValue } = useMailtoValue();
+  const { setMailtoValue } = useMailtoValue();
 
   const [mailto, setMailto] = useState({
     destinatario: '',
@@ -24,7 +24,6 @@ export const EmailComponent: React.FC = () => {
 
   const formattedMailtoMessage = generateMailtoMessage(mailto);
   setMailtoValue(formattedMailtoMessage);
-  console.log("formulário enviado", mailtoValue);
   }
   
   return (

@@ -24,7 +24,6 @@ export const WifiFormComponent: React.FC = () => {
 
     const formattedWifiConnection = generateWifiConnection({ ...wifi, [name]: value });
     setWifiValue(formattedWifiConnection);
-    console.log("formulário enviado", formattedWifiConnection);
   };
 
   return (

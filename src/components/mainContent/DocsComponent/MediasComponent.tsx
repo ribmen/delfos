@@ -25,7 +25,7 @@ export const MediasComponent = () => {
                 <NamespaceStyled
                   key={namespace}
                   onClick={() => handleSelectedNamespace(namespace)}
-                  $isSelected = {selectedNamespace === namespace}
+                  $isSelected = {selectedNamespace === namespace} 
                 >
                   {namespace}
                 </NamespaceStyled>

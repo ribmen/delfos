@@ -8,7 +8,6 @@ import { NamespaceContextProvider } from "../contexts/NamespaceContext";
 import { ButtonFormProvider } from "../contexts/ButtonFormContext";
 import { VCardValueProvider } from "../contexts/vCardContext";
 import { WifiValueProvider } from "../contexts/WifiContext";
-import { EmailComponent } from "./DocsComponent/FormsComponents/EmailComponent";
 import { MailtoValueProvider } from "../contexts/MailtoContext";
 
 const MainContainerStyle = styled.main`

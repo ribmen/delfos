@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Box } from '@mui/material';
 import { useVCardValue } from "../../../contexts/vCardContext";
 import { generateVCard } from "../../../../utils/vCardFormat";
 import "./index.css"
@@ -8,7 +8,7 @@ import "./index.css"
 
 export const ContatoComponent: React.FC = () => {
   const { namespaceValue } = useNamespaceValue();
-  const {setVCardValue, vCardValue } = useVCardValue();
+  const {setVCardValue} = useVCardValue();
   const [vCard, setVCard] = useState({
     firstName: '',
     lastName: '',
@@ -34,8 +34,7 @@ export const ContatoComponent: React.FC = () => {
    }));
 
    const formattedVCard = generateVCard(vCard);
-   setVCardValue(formattedVCard); // salva no contexto
-   console.log("formulário enviado", vCardValue);
+   setVCardValue(formattedVCard);
  };
 
   return(

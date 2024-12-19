@@ -9,7 +9,6 @@ export const QrPlaceComponent = () => {
 
   useEffect(() => {
     setQrValue(linkValue || 'Valor padrão do QR CODE');
-    console.log("useEffect listening linkValue", linkValue);
   }, [linkValue]);
 
       return (

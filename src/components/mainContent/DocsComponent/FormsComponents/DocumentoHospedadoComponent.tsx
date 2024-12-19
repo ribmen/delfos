@@ -6,7 +6,7 @@ import "./index.css"
 
 export const DocumentoHospedadoComponent: React.FC = () => {
   //shared states; context API: forma correta de compartilhar entre componentes mas não componentes hierárquicos
-  const { inputValue, setInputValue } = useInputValue();
+  const { setInputValue } = useInputValue();
   const { namespaceValue } = useNamespaceValue();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

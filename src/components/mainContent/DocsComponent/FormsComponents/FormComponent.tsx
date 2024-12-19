@@ -3,10 +3,10 @@ import { useLinkValue } from "../../../contexts/LinkValueContext";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
 import { ChamadoComponent } from "./ChamadoComponent";
 import { ContatoComponent } from "./ContatoComponent";
-import { DocumentoHospedadoComponent } from "./DocumentoHospedadoComponent";
 import { EmailComponent } from "./EmailComponent";
 import { LinkFormComponent } from "./LinkFormComponent";
 import { WhatsappContactComponent } from "./WhatsappContactComponent";
+import { WifiFormComponent } from "./WifiFormComponent";
 
 export const FormsComponent: React.FC = () => {
   const { namespaceValue } = useNamespaceValue();
@@ -18,9 +18,9 @@ export const FormsComponent: React.FC = () => {
   switch (namespaceValue) {
     case "Link":
       return <LinkFormComponent/>
-    case "Wifi":
-      return <DocumentoHospedadoComponent/>
-    case "Contato":
+    case "WIFI":
+      return <WifiFormComponent/>
+    case "Cartão de Contato":
       return <ContatoComponent/>
     case "E-mail":
       return <EmailComponent/>
