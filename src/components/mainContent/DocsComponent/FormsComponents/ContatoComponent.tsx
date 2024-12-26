@@ -44,10 +44,10 @@ export const ContatoComponent: React.FC = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 2, // Espaçamento vertical entre os grupos
+          gap: 1, // Espaçamento vertical entre os grupos
           '& .contactInputs': {
             display: 'flex',
-            gap: 2, // Espaçamento horizontal entre os campos dentro de cada linha
+            gap: 1, // Espaçamento horizontal entre os campos dentro de cada linha
           },
         }}
         noValidate
