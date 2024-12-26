@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
-import { TextField, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { useVCardValue } from "../../../contexts/vCardContext";
 import { generateVCard } from "../../../../utils/vCardFormat";
 import "./index.css"
@@ -25,7 +26,6 @@ export const ContatoComponent: React.FC = () => {
     address: '',
   });
 
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
    const { name, value} = event.target;
    setVCard((prev: any) => ({
@@ -41,143 +41,223 @@ export const ContatoComponent: React.FC = () => {
     <Fragment>
       <Box
         component="form"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2, // Espaçamento vertical entre os grupos
+          '& .contactInputs': {
+            display: 'flex',
+            gap: 2, // Espaçamento horizontal entre os campos dentro de cada linha
+          },
+        }}
+        noValidate
+        autoComplete="off"
       >
-      <h4 className="mediaTitle">{namespaceValue}</h4>
+
+      <h3 className="mediaTitle">{namespaceValue}</h3>
+      <h4 className="localInfo">Informações pessoais</h4>
       <div className="contactInputs">
-        <label style={{marginRight: "10px"}}>Primeiro nome
         <TextField
+          required
+          id="outlined-basic"
+          label="Primeiro nome"
           type="text" 
           placeholder="" 
           autoComplete="off"
           value={vCard.firstName}
           name="firstName"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
           />
-        </label>
         
-        <label style={{marginLeft: "10px"}}>Último nome
         <TextField 
+          required
+          id="outlined-basic"
+          label="Último nome"
           type="text" 
           placeholder="" 
           autoComplete="off"
           value={vCard.lastName}
           name="lastName"
-          onChange={handleChange} 
+          onChange={handleChange}
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
         />
-        </label>
       </div>
       <div className="contactInputs">
-        <label style={{marginRight: "10px"}}>Telefone celular
         <TextField 
+          required
+          fullWidth
+          id="outlined-basic"
+          label="Telefone celular"
           type="text" 
           placeholder="Formato: (XX) XXXXX-XXXX" 
           autoComplete="off"
           value={vCard.phoneNumber}
           name="phoneNumber"
-          onChange={handleChange} 
+          onChange={handleChange}
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
           />
-        </label>
         
-        <label style={{marginLeft: "10px"}}>Telefone fixo
         <TextField 
+          id="outlined-basic"
+          label="Telefone fixo"
           type="text" 
           placeholder="" 
           autoComplete="off"
           value={vCard.landlineNumber}
           name="landlineNumber"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
         />
-        </label>
       </div>
+      <h4 className="localInfo">Informações profissionais</h4>
       <div className="contactInputs">
-        <label style={{marginRight: "10px"}}>E-mail
-        <TextField 
+        <TextField
+          fullWidth
+          id="outlined-basic"
+          label="E-mail"
           type="text" 
           placeholder="Formato: exemplo@dominio.com" 
           autoComplete="off"
           value={vCard.email}
           name="email"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
           />
-        </label>
         
-        <label style={{marginLeft: "10px"}}>Site (URL)
         <TextField 
+          id="outlined-basic"
+          label="Site (URL)"
           type="text" 
           placeholder="https://" 
           autoComplete="off"
           value={vCard.websiteUrl}
           name="websiteUrl"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
         />
-        </label>
       </div>
       <div className="contactInputs">
-        <label style={{marginRight: "10px"}}>Empresa
-          <TextField 
+          <TextField
+            id="outlined-basic"
+            label="Empresa/Órgão"
             type="text" 
             placeholder="PROCURADORIA GERAL DO ESTADO DO RN" 
             autoComplete="off"
             value={vCard.organization}
             name="organization"
             onChange={handleChange} 
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px", 
+              },
+            }}
           />
-          </label>
 
-          <label style={{marginLeft: "10px"}}>Cargo
-          <TextField 
+          <TextField
+            id="outlined-basic"
+            label="Cargo"
             type="text" 
             placeholder="" 
             autoComplete="off"
             value={vCard.role}
             name="role"
             onChange={handleChange} 
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px", 
+              },
+            }}
             />
-          </label>
       </div>
-      <label>Endereço
+      <h4 className="localInfo">Localização</h4>
         <TextField 
+          id="outlined-basic"
+          label="Endereço"
           type="text" 
           placeholder="R. X, N°, Bairro - Cidade, Estado" 
           autoComplete="off"
           value={vCard.address}
           name="address"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
           />
-      </label>
       <div className="contactInputs">
-        <label>City
         <TextField 
+          id="outlined-basic"
+          label="Cidade"
           type="text" 
           placeholder="" 
           autoComplete="off"
           value={vCard.city}
           name="city"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
           />
-        </label>
         
-        <label style={{marginLeft: "10px"}}>CEP
         <TextField 
+          id="outlined-basic"
+          label="CEP"
           type="text" 
           placeholder="Apenas dígitos" 
           autoComplete="off"
           value={vCard.CEPcode}
           name="CEPcode"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
         />
-        </label>
 
-        <label style={{marginLeft: "10px"}}>País
         <TextField 
+          id="outlined-basic"
+          label="País"
           type="text" 
           placeholder="" 
           autoComplete="off"
           value={vCard.country}
           name="country"
           onChange={handleChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
         />
-        </label>
       </div>
       </Box>
     </Fragment>

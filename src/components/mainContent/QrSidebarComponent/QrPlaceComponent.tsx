@@ -3,7 +3,7 @@ import { QRCode } from 'react-qrcode-logo';
 import { QrPlaceComponentStyle } from './styles.qrplace';
 import { useLinkValue } from '../../contexts/LinkValueContext';
 
-export const QrPlaceComponent = () => {
+export const QrPlaceComponent = ({qrRef}: {qrRef: any}) => {
   const { linkValue } = useLinkValue();
   const [qrValue, setQrValue] = useState<string>('Valor padrão do QR CODE');
 
@@ -21,6 +21,7 @@ export const QrPlaceComponent = () => {
             removeQrCodeBehindLogo={true}
             logoWidth={200}
             bgColor="#FFF"
+            ref={qrRef}
           />
         </QrPlaceComponentStyle>
       );

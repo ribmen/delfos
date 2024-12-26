@@ -11,16 +11,17 @@ import { WifiValueProvider } from "../contexts/WifiContext";
 import { MailtoValueProvider } from "../contexts/MailtoContext";
 
 const MainContainerStyle = styled.main`
-  width: 70vw;
-  height: 77vh;
+  width: 65vw;
+  height: 75vh;
   margin: auto;
   background-color: white;
-  border-radius: 0 30px 0 30px;
+  border-radius: 0 18px 0 18px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   align-items: center;
   box-sizing: border-box;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 `
 
 export const MainContainer: React.FC = () => {
@@ -31,12 +32,12 @@ export const MainContainer: React.FC = () => {
     <ButtonFormProvider>
     <WifiValueProvider>
     <MailtoValueProvider>
-        <MainContainerStyle>
-          <NamespaceContextProvider>
+    <NamespaceContextProvider>
+          <MainContainerStyle>
             <DocsComponent/>
             <QrContainer/>
-          </NamespaceContextProvider>
-        </MainContainerStyle>    
+          </MainContainerStyle>    
+    </NamespaceContextProvider>
     </MailtoValueProvider>
     </WifiValueProvider>
     </ButtonFormProvider>

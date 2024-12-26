@@ -7,7 +7,7 @@ export const DocsComponentStyled = styled.aside`
   box-sizing: border-box;
   margin: 2rem 2rem 2rem 6rem;
   padding: 0 2rem 0 2rem;
-  border-radius: 30px 0 0 30px;
+  border-radius: 18px 0 0 18px;
   background-color: #f9f9f9;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;

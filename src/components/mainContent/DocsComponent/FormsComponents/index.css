@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+.localInfo {
+  margin: 0;
+}
+
 .wifiInputs {
   display: flex;
 }

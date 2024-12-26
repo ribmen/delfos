@@ -2,6 +2,8 @@ import React from "react";
 import { InputStyled } from "../styles.form";
 import { useInputValue } from "../../../contexts/InputValueContext";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
+import { TextField } from "@mui/material";
+
 
 export const WhatsappContactComponent: React.FC = () => {
   const { setInputValue } = useInputValue();
@@ -16,14 +18,20 @@ export const WhatsappContactComponent: React.FC = () => {
   return (
       <>
       <h4 className="mediaTitle">{namespaceValue}</h4>
-      <label style={{marginRight: "10px"}}>Contato de Whatsapp
-          <InputStyled 
-            type="text" 
-            placeholder="+55 84 99000 0000" 
-            autoComplete="off"
-            onChange={handleInputChange} 
-            />
-          </label>
+      <TextField 
+          fullWidth
+          id="outlined-basic"
+          label="Contato de Whatsapp"
+          type="text" 
+          placeholder="+5584 + número SEM ESPAÇO" 
+          autoComplete="off"
+          onChange={handleInputChange} 
+          sx={{
+            "& .MuiInputBase-root": {
+              height: "50px", 
+            },
+          }}
+        />
       </>
   )
 }

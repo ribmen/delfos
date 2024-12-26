@@ -8,7 +8,6 @@ interface ButtonPlaceProps {
   flexProps: number;
 }
 
-//FC = FUNCTION
 export const ButtonPlace: React.FC<ButtonPlaceProps> = ({children, flexProps}) => {
   return(
     <>

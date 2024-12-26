@@ -3,6 +3,7 @@ import { InputStyled, TxtInputStyled } from "../styles.form";
 import { useNamespaceValue } from "../../../contexts/NamespaceContext";
 import { useMailtoValue } from "../../../contexts/MailtoContext";
 import { generateMailtoMessage } from "../../../../utils/mailtoFormat";
+import TextField from "@mui/material/TextField";
 
 export const EmailComponent: React.FC = () => {
 
@@ -29,36 +30,49 @@ export const EmailComponent: React.FC = () => {
   return (
     <Fragment>
     <h4 className="mediaTitle">{namespaceValue}</h4>
-      <label style={{marginRight: "10px"}}>E-mail destinatário
-          <InputStyled 
+          <TextField 
             name="destinatario"
+            label="E-mail destinatário"
             value={mailto.destinatario}
             type="text" 
             placeholder="exemplo@dominio.com" 
             autoComplete="off"
             onChange={handleChange} 
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px", 
+              },
+            }}
             />
-          </label>
 
-      <label style={{marginRight: "10px"}}>Assunto do e-mail
-          <InputStyled 
+          <TextField 
             name="assunto"
+            label="Assunto do e-mail"
             value={mailto.assunto}
             type="text" 
             placeholder="Escreva o título do e-mail" 
             autoComplete="off"
             onChange={handleChange} 
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px", 
+              },
+            }}
             />
-          </label>
-      <label style={{marginRight: "10px"}}>Conteúdo da mensagem
-          <TxtInputStyled 
+
+          <TextField 
             name="mensagem"
+            label="Conteúdo da mensagem"
             value={mailto.mensagem}
             placeholder="" 
             autoComplete="off"
             onChange={handleChange} 
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px", 
+              },
+            }}
             />
-          </label>
 
     </Fragment>
   )

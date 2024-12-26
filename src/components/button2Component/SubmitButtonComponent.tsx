@@ -18,7 +18,7 @@ interface ButtonProps {
 }
 
 export const SubmitButtonComponent = ({label, disabled}: ButtonProps) => {
-  const { setLinkValue} = useLinkValue(); 
+  const { linkValue, setLinkValue} = useLinkValue(); 
   const { wifiValue } = useWifiValue();
   const { mailtoValue } = useMailtoValue();
   const { inputValue } = useInputValue();
@@ -36,20 +36,22 @@ export const SubmitButtonComponent = ({label, disabled}: ButtonProps) => {
         <ButtonStyled onClick={handleLinkClick} disabled={disabled} >{label}</ButtonStyled>
       )
     
-    case("Wifi"):
+    case("WIFI"):
     const handleWifiClick = () => {
       setLinkValue(wifiValue);
+      console.log("wifi value", wifiValue);
+      console.log("link value", linkValue)
     }
       return(
         <ButtonStyled onClick={handleWifiClick} disabled={disabled} >{label}</ButtonStyled>
       )
     
-    case("Contato"):
+    case("Cartão de Contato"):
       const handleContatoClick = () => {
         setLinkValue(vCardValue);
       } 
       return(
-        <ButtonStyled onClick={handleContatoClick} disabled={disabled} >Submeter contato</ButtonStyled>
+        <ButtonStyled onClick={handleContatoClick} disabled={disabled} >{label}</ButtonStyled>
       )
 
     case("E-mail"):
